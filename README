@@ -1,7 +1,13 @@
 BraintreePaymentProcessing
 ==========================
 
-Ruby client library to [Braintree Payment Gateway](braintreepaymentsolutions.com/).  See lib/braintree/client.rb for details.
+Ruby client library to [Braintree Payment
+Gateway](braintreepaymentsolutions.com/).  See lib/braintree/client.rb
+for details.
+
+I wrote this client based on Braintree's API documentation to handle
+recurring billing. Later on, it would probably make sense to add this
+functionality back into active_merchant.
 
 Dependencies
 ============
