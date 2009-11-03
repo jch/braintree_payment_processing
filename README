@@ -1,0 +1,35 @@
+BraintreePaymentProcessing
+==========================
+
+Ruby client library to [Braintree Payment Gateway](braintreepaymentsolutions.com/).  See lib/braintree/client.rb for details.
+
+Dependencies
+============
+* 'rest-client' gem
+* 'active_merchant' plugin
+
+Example
+=======
+
+client = Braintree::Client.new({
+                 :username => 'testapi',
+                 :password => 'password1',
+                 :api_url  => 'https://secure.braintreepaymentgateway.com/api/transact.php',
+                 :on_error => Proc.new { |post_params, response|
+                   HoptoadNotifier.notify(:error_message => "Payment Error: #{response.text}")
+                 }
+               })
+               
+# credit_card - valid ActiveMerchant::Billing::CreditCard object
+client.add_credit_card_to_vault(credit_card)
+
+# customer_vault_id - if of customer to update
+# product_sku       - sku of plan to add customer to
+client.add_recurring(customer_vault_id, product_sku)
+
+Reference
+=========
+* http://dev.braintreepaymentsolutions.com/vault/direct-post/
+
+
+Copyright (c) 2009 [Jerry Cheung], released under the MIT license

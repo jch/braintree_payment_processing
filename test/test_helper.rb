@@ -1,0 +1,6 @@
+require 'rubygems'
+require 'active_support'
+require 'active_support/test_case'
+require 'test/unit'
+require File.dirname(__FILE__) + '/../lib/braintree'
+require File.dirname(__FILE__) + '/../../active_merchant/lib/active_merchant'
